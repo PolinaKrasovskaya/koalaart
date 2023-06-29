@@ -1,0 +1,144 @@
+html {
+  box-sizing: border-box;
+  // background-color: #D4FFE9;
+  // background-color: #F6FFD4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+// h1,
+// h2,
+// h3,
+// p {
+//   margin-top: 0;
+//   margin-bottom: 0;
+// }
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $main-text-cl;
+}
+
+body * {
+  font-family: 'Merriweather', serif;
+  // font-family: 'Lora', serif;
+  // font-family: 'Spectral', serif;
+  @include fonts(14px, 400, 1.71, 0.03em);
+  // color: $main-text-cl;
+  // background-color: #F6FFD4;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Утилиты */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  // border: 1px solid yellow;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  @include for-size(mobile) {
+    width: 480px;
+  }
+
+  @include for-size(tablet) {
+    width: 768px;
+  }
+
+  @include for-size(desktop) {
+    width: 1200px;
+  }
+}
+
+.link {
+  color: $main-text-cl;
+  fill: $main-text-cl;
+  text-decoration: none;
+  align-items: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: $accent-cl;
+    fill: $accent-cl;
+  }
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+
+  @include for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.contact-link {
+  @include fonts(14px, 500, 1.14, 0.02em);
+  color: $main-text-cl;
+}
+
+.section-title {
+  margin-bottom: 30px;
+
+  @include fonts(28px, 700, 1.17);
+  text-align: center;
+  color: $black;
+
+  @include for-size(desktop) {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+}
+
+.psevdo-active {
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    @include size(100%, 4px);
+    margin: 0 auto;
+    margin-top: 8px;
+
+    background: #2196f3;
+    border-radius: 4px;
+
+    @include for-size(tablet) {
+      margin-top: 28px;
+    }
+  }
+}
+.current:visited {
+  color: $accent-cl;
+}

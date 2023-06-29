@@ -1,0 +1,125 @@
+.button {
+  @include centered(inline-block);
+  @include size(200px, 50px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+
+  font-family: inherit;
+  @include fonts(16px, 700, 1.87, 0.06em);
+  color: $white;
+  background-color: $accent-cl;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-cl;
+    background-color: $white;
+  }
+}
+
+
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  .icon-cross {
+    display: none;
+  }
+
+  @include for-size(tablet) {
+    display: none;
+  }
+
+  &:hover .icon-cross {
+    fill: $dark-bg;
+  }
+}
+
+.menu-button.is-open {
+  .icon-cross {
+    display: block;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+}
+
+.subscribe-button {
+  @include centered(inline-flex);
+  position: relative;
+  @include size(200px, 50px);
+  padding: 13px 29px;
+  color: $white;
+  @include fonts(16px, 700, 1.87, 0.06em);
+
+  background: $accent-cl;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $accent-cl;
+    fill: $accent-cl;
+
+    .icon-send {
+      fill: $accent-cl;
+    }
+  }
+}
+
+.icon-send {
+  @include size(24px, 24px);
+  margin-left: 10px;
+
+  fill: $white;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-button {
+  display: inline-block;
+  padding: 6px 22px;
+  min-width: 73px;
+  border: 1px solid transparent;
+  @include fonts(16px, 500, 1.62, 0.03em);
+  text-align: center;
+  color: $black;
+  background-color: $grey-bg;
+  border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $accent-cl;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+.buttons-menu {
+  margin-bottom: 50px;
+}
+
+.button-menu-list:not(:last-child) {
+  margin-right: 8px;
+}
+
+.button-menu-list {
+  margin-bottom: 15px;
+
+  @include for-size(tablet) {
+    margin-bottom: 0;
+  }
+}
+.button-menu-list:nth-child(n + 2) {
+  margin-bottom: 0;
+}

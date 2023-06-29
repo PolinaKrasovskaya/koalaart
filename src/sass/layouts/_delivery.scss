@@ -1,0 +1,34 @@
+.products {
+    background-color: #ffffff;
+    border: 1px solid #d41443;
+    height: 740px;
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .products-heading {
+    margin-top: 0;
+    margin-bottom: 144px;
+    text-align: center;
+    text-transform: uppercase;
+    // font-family: Titan One;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.14;
+    letter-spacing: 0.04em;
+    color: #2a3831;
+  
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 150px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      font-size: 58px;
+      line-height: 1.14;
+      margin-bottom: 259px;
+    }
+  }

@@ -1,0 +1,160 @@
+@import './styleDefoult/mixin';
+.aboutus {
+  // background-color: $grey-bg;
+  // border: 1px solid #d41443;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-heading {
+  padding-bottom: 20px;
+  // margin-bottom: 144px;
+  text-align: center;
+  text-transform: uppercase;
+  // font-family: Titan One;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  color: $dark-bg;
+
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    line-height: 1.15;
+    // margin-bottom: 150px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 48px;
+    line-height: 1.14;
+    // margin-bottom: 259px;
+  }
+}
+
+.list-direction {
+  width: auto;
+
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @include for-size(desktop) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item-direction:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.item-direction {
+  @include for-size(tablet) {
+    width: calc((100% - 60px) / 2);
+    margin-bottom: 30px;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2n) {
+      margin-left: 30px;
+    }
+  }
+
+  @include for-size(desktop) {
+    width: calc((100% - 120px) / 4);
+    margin-bottom: 0;
+
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+}
+
+.item-div-us{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    height: 120px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $icon-grey;
+    // border: 2px solid #2a3831;
+}
+
+.icon-direction {
+  height: 100px;
+  fill: #252525;
+}
+
+.icon-palitra{}
+
+.icon-bus{
+  height: 80px;
+}
+
+.icon-price{}
+// .icon-antenna::before {
+//   background-image: url(../img/decor/antenna1.svg);
+// }
+
+// .icon-clock::before {
+//   background-image: url(../img/decor/clock1.svg);
+// }
+
+// .icon-diagram::before {
+//   background-image: url(../img/decor/diagram1.svg);
+// }
+
+// .icon-astronaut::before {
+//   background-image: url(../img/decor/astronaut1.svg);
+// }
+
+.directions {
+  margin-bottom: 10px;
+  @include fonts(14px, 700, 1.14, 0.03em);
+  text-transform: uppercase;
+  color: $black;
+  text-align: center;
+}
+
+
+// .strong{
+//   width: 200px;
+//   height: 100px;
+//   margin-left: 20px;
+//   border: 1p solid grey;
+//   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+// }
+
+// .box-strong{
+//   display: block;
+//   align-items: center;
+//   justify-content: center;
+//   // border: 1px solid blue;
+//   width: 250px;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//   }
+// }
+
+// .box-one{
+//   display: block;
+//   @media screen and (min-width: 1280px) {
+//     display: flex;
+//   }
+
+// }

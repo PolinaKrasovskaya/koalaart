@@ -1,0 +1,28 @@
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+body{
+  font-family: 'DM Sans',
+  sans-serif;
+}
+// Стили для файла с примером HTML-фрагмента
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./base/fonts";
+@import "./base/common";
+
+@import "./components/buttons";
+@import "./components/forms";
+
+@import './layouts/aboutus';
+@import './layouts/hero';
+@import './layouts/products';
+@import './layouts/prices';
+@import './layouts/order';
+@import './layouts/delivery';
+
+@import './header';
+@import './footer';
+@import './styleDefoult/arrouUp';
