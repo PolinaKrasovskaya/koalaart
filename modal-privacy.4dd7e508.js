@@ -117,103 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/menu.js":[function(require,module,exports) {
+})({"js/modal-privacy.js":[function(require,module,exports) {
 (function () {
   var refs = {
-    menuBtnRef: document.querySelector('[data-menu-button]'),
-    mobileMenuRef: document.querySelector('[data-menu]'),
-    mobileMenuLink: document.querySelector('[data-link]'),
-    backdropMenu: document.querySelector('body')
+    openModalPrivacyBtn: document.querySelector('[data-modal-privacy-open]'),
+    closeModalPrivacyBtn: document.querySelector('[data-modal-close-privacy]'),
+    modalPrivacy: document.querySelector('[data-modal-privacy]')
   };
-  refs.backdropMenu.addEventListener('click', onBackdropClick);
+  refs.openModalPrivacyBtn.addEventListener('click', toggleModal);
+  refs.closeModalPrivacyBtn.addEventListener('click', toggleModal);
 
-  function onBackdropClick(event) {// console.log(refs.backdropMenu);
-    // console.log(event.target);
-    // console.log(event.currentTarget);
-    // if (event.currentTarget === event.target) {
-    //   console.log('Кликнули именно в бекдроп!!!!');
-    //   // onCloseModal();
-    // }
+  function toggleModal() {
+    console.log('modal click privacy');
+    refs.modalPrivacy.classList.toggle('is-hidden');
   }
-
-  function onMenuOpen() {
-    refs.menuBtnRef.classList.add('is-open');
-    refs.mobileMenuRef.classList.add('is-open');
-  }
-
-  function onMenuClose() {
-    refs.menuBtnRef.classList.remove('is-open'); // refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-
-    refs.mobileMenuRef.classList.remove('is-open');
-  }
-
-  refs.menuBtnRef.addEventListener('click', function () {
-    var expanded = refs.menuBtnRef.getAttribute('aria-expanded') === 'true' || false;
-    console.log(expanded);
-
-    if (expanded === false) {
-      onMenuOpen();
-      refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-    } else {
-      onMenuClose();
-      refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-    }
-  });
-  refs.mobileMenuLink.addEventListener('click', function () {
-    // console.log("link click")
-    var isOpen = refs.mobileMenuRef.getAttribute('is-open') === 'true' || false; // console.log(isOpen)
-
-    refs.mobileMenuRef.classList.toggle('is-open');
-    refs.mobileMenuRef.setAttribute('is-open', !isOpen);
-    var expanded = refs.menuBtnRef.getAttribute('aria-expanded') === 'true' || false;
-    refs.menuBtnRef.classList.toggle('is-open');
-    refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-  });
-})(); // (() => {
-//   const refs = {
-//     menuBtnRef: document.querySelector('[data-menu-button]'),
-//     mobileMenuRef: document.querySelector('[data-menu]'),
-//     mobileMenuLink: document.querySelector('[data-link]'),
-//     backdropMenu: document.querySelector('body'),
-//   };
-//   refs.backdropMenu.addEventListener('click', onBackdropClick);
-//   // function onCloseModal() {
-//   //   // window.removeEventListener('keydown', onEscKeyPress);
-//   //   console.log('close click');
-//   //   refs.mobileMenuRef.classList.add('is-hidden');
-//   // }
-//   function onBackdropClick(event) {
-//         // console.log(refs.backdropMenu);
-//     // console.log(event.target);
-//     // console.log(event.currentTarget);
-//     // if (event.currentTarget === event.target) {
-//     //   console.log('Кликнули именно в бекдроп!!!!');
-//     //   // onCloseModal();
-//     // }
-//   }
-//   refs.menuBtnRef.addEventListener('click', () => {
-//     const expanded =
-//       refs.menuBtnRef.getAttribute('aria-expanded') === 'true' || false;
-//       console.log(expanded);
-//       if(expanded === true)
-//     refs.menuBtnRef.classList.toggle('is-open');
-//     refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-//     refs.mobileMenuRef.classList.toggle('is-open');
-//     // mobileMenuRef.setAttribute("aria-expanded", !expanded);
-//   });
-//   refs.mobileMenuLink.addEventListener('click', () => {
-//     // console.log("link click")
-//     const isOpen =
-//       refs.mobileMenuRef.getAttribute('is-open') === 'true' || false;
-//     // console.log(isOpen)
-//     refs.mobileMenuRef.classList.toggle('is-open');
-//     refs.mobileMenuRef.setAttribute('is-open', !isOpen);
-//     const expanded =
-//       refs.menuBtnRef.getAttribute('aria-expanded') === 'true' || false;
-//     refs.menuBtnRef.classList.toggle('is-open');
-//     refs.menuBtnRef.setAttribute('aria-expanded', !expanded);
-//   });
-// })();
+})();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -418,5 +336,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/menu.js"], null)
-//# sourceMappingURL=/menu.0c91648c.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/modal-privacy.js"], null)
+//# sourceMappingURL=/modal-privacy.4dd7e508.js.map

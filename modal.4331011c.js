@@ -122,14 +122,39 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   var refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]')
+    modal: document.querySelector('[data-modal]'),
+    backdrop: document.querySelector('.js-modal-backdrop')
   };
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', onOpenModal);
+  refs.closeModalBtn.addEventListener('click', onCloseModal);
+  refs.backdrop.addEventListener('click', onBackdropClick);
 
-  function toggleModal() {
-    console.log('modal click');
-    refs.modal.classList.toggle('is-hidden');
+  function onOpenModal() {
+    window.addEventListener('keydown', onEscKeyPress);
+    console.log('open click');
+    refs.modal.classList.remove('is-hidden');
+  }
+
+  function onCloseModal() {
+    window.removeEventListener('keydown', onEscKeyPress);
+    console.log('close click');
+    refs.modal.classList.add('is-hidden');
+  }
+
+  function onBackdropClick(event) {
+    if (event.currentTarget === event.target) {
+      console.log('Кликнули именно в бекдроп!!!!');
+      onCloseModal();
+    }
+  }
+
+  function onEscKeyPress(event) {
+    var ESC_KEY_CODE = 'Escape';
+    var isEscKey = event.code === ESC_KEY_CODE;
+
+    if (isEscKey) {
+      onCloseModal();
+    }
   }
 })();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -160,7 +185,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54271" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55111" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
