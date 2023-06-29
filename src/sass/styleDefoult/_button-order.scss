@@ -1,0 +1,30 @@
+.button-order {
+  opacity: 1;
+  position: fixed;
+  top: 350px;
+  right: 0;
+  z-index: 30;
+  cursor: pointer;
+
+  @include centered(inline-block);
+  @include size(120px, 50px);
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  @include fonts(16px, 700, 1.87, 0.06em);
+  text-shadow: 1px 1px 3px $main-text-cl;
+  color: $white;
+  background-color: $accent-cl;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-cl;
+    background-color: $white;
+  }
+
+  transition: 1s all;
+  transform: rotate(90deg);
+  transform-origin: top right;
+}

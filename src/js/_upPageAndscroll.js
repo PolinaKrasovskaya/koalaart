@@ -2,7 +2,7 @@
 
 const appLog = (upSelector) => {
     const upElem = document.querySelector(upSelector);
-    console.log(upElem)
+    // console.log(upElem)
     window.addEventListener('scroll', () => {
         if (document.documentElement.scrollTop > 300) {
             // console.log('start');

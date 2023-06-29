@@ -41,7 +41,6 @@
 .contact-link {
   display: inline-flex;
   align-items: center;
-
   font-size: 16px;
   font-weight: 500;
   line-height: 1.17;
@@ -56,7 +55,7 @@
   }
 
   @media screen and(min-width: 768px) {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.17;
@@ -85,6 +84,7 @@
 
 .header-phone-number {
   margin-left: 10px;
+  text-shadow: 1px 1px 3px $accent-cl;
 }
 
 .main-nav {
@@ -99,19 +99,25 @@
 
   @media screen and(min-width: 768px) {
     height: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     justify-content: center;
   }
 }
 
 .header-menu-button {
-  width: 120px;
-  padding-left: 20px;
+  width: 70px;
+  height: 60px;
+  justify-content: right;
+  align-items: center;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .header-logo-mob {
   // margin-right: 30px;
   // margin-left: 30px;
-  padding-right: 30px;
+  padding-left: 30px;
   @media screen and(min-width: 768px) {
     display: none;
   }
@@ -154,9 +160,11 @@
 .menu-container {
   text-align: center;
   top: 100%;
-  left: 0;
+  right: 0;
   display: flex;
   z-index: 100;
+  background-color: white;
+  opacity: 1;
 
   @media screen and(max-width: 767px) {
     text-align: left;
@@ -182,6 +190,12 @@
       border-radius: 0;
     }
   }
+}
+
+.menu-container.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .site-nav {
@@ -307,8 +321,10 @@
 
 .mob-menu-contact {
   margin-left: 10px;
-  color: $main-text-cl;
-  
+  color: $dark-bg;
+  text-shadow: 1px 1px 3px $accent-cl;
+  border-bottom: 1px solid $accent-cl;
+
   &:hover,
   &:focus {
     .icon {
@@ -329,7 +345,7 @@
   }
 }
 
-.mob-menu-links{
+.mob-menu-links {
   margin-top: 20px;
   display: flex;
   width: 180px;
@@ -342,6 +358,6 @@
   }
 }
 
-.icon-mob-menu{
+.icon-mob-menu {
   fill: $dark-bg;
 }

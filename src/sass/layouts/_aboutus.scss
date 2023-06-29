@@ -1,42 +1,43 @@
 @import './styleDefoult/mixin';
 .aboutus {
-  // background-color: $grey-bg;
-  // border: 1px solid #d41443;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   width: 100%;
   display: block;
   align-items: center;
   justify-content: center;
+
+  @include for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .aboutus-heading {
-  padding-bottom: 20px;
-  // margin-bottom: 144px;
+  margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
-  // font-family: Titan One;
   font-size: 34px;
   font-weight: 900;
   line-height: 1.14;
   letter-spacing: 0.04em;
   color: $dark-bg;
+  text-shadow: 1px 1px 3px $main-text-cl;
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 1.15;
-    // margin-bottom: 150px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1200px) {
     font-size: 48px;
     line-height: 1.14;
-    // margin-bottom: 259px;
   }
 }
 
 .list-direction {
   width: auto;
+  text-align: center;
 
   @include for-size(tablet) {
     display: flex;
@@ -57,6 +58,8 @@
 }
 
 .item-direction {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+  0px 0px 0px rgba(0, 0, 0, 0);
   @include for-size(tablet) {
     width: calc((100% - 60px) / 2);
     margin-bottom: 30px;
@@ -72,89 +75,61 @@
 
   @include for-size(desktop) {
     width: calc((100% - 120px) / 4);
-    margin-bottom: 0;
-
+    margin-bottom: 30px;
     &:not(:first-child) {
       margin-left: 30px;
+    }
+    &:nth-child(5n) {
+      margin-left: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
     }
   }
 }
 
-.item-div-us{
+.item-div-us {
   display: flex;
   align-items: center;
   justify-content: center;
-    height: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $icon-grey;
+
+  @include for-size(desktop) {
     margin-bottom: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: $icon-grey;
-    // border: 2px solid #2a3831;
+  }
 }
-
-.icon-direction {
-  height: 100px;
-  fill: #252525;
-}
-
-.icon-palitra{}
-
-.icon-bus{
-  height: 80px;
-}
-
-.icon-price{}
-// .icon-antenna::before {
-//   background-image: url(../img/decor/antenna1.svg);
-// }
-
-// .icon-clock::before {
-//   background-image: url(../img/decor/clock1.svg);
-// }
-
-// .icon-diagram::before {
-//   background-image: url(../img/decor/diagram1.svg);
-// }
-
-// .icon-astronaut::before {
-//   background-image: url(../img/decor/astronaut1.svg);
-// }
 
 .directions {
   margin-bottom: 10px;
-  @include fonts(14px, 700, 1.14, 0.03em);
+  @include fonts(16px, 700, 1.14, 0.03em);
   text-transform: uppercase;
-  color: $black;
+  color: $main-text-cl;
+  text-align: center;
+  text-shadow: 1px 1px 3px $accent-cl;
+}
+
+.directions-text{
   text-align: center;
 }
 
+.icon-about {
+  fill: $dark-bg;
+  display: block;
+  height: 100px;
+  width: 150px;
+}
 
-// .strong{
-//   width: 200px;
-//   height: 100px;
-//   margin-left: 20px;
-//   border: 1p solid grey;
-//   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
-// }
+.about-text-box{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
 
-// .box-strong{
-//   display: block;
-//   align-items: center;
-//   justify-content: center;
-//   // border: 1px solid blue;
-//   width: 250px;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   @media screen and (min-width: 768px) {
-//     display: flex;
-//   }
-// }
-
-// .box-one{
-//   display: block;
-//   @media screen and (min-width: 1280px) {
-//     display: flex;
-//   }
-
-// }
+  @include for-size(desktop) {
+    padding-bottom: 30px;
+  }
+}

@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    /> -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
-      rel="stylesheet"
-    /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -31,7 +21,32 @@
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
     />
-    <title>EP</title>
+    <title>Koala Art</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_package/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_package/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_package/favicon-16x16.png"
+    />
+    <!-- <link rel="manifest" href="./favicon_package/site.webmanifest"> -->
+    <link
+      rel="mask-icon"
+      href="./favicon_package/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
 
   <body>
@@ -40,13 +55,13 @@
 
     <include src="./partials/aboutus.html"></include>
     <include src="./partials/products.html"></include>
-    <!-- <include src="./partials/images.html"></include>
-  <include src="./partials/coments.html"></include> -->
     <include src="./partials/prices.html"></include>
-    <!-- <include src="./partials/order.html"></include>
-    <include src="./partials/delivery.html"></include> -->
     <include src="./partials/footer.html"></include>
     <include src="./partials/_arrowUp.html"></include>
+    <include src="./partials/button_order.html"></include>
+    <include src="./partials/modal.html"></include>
+    <include src="./partials/modal-privacy.html"></include>
+    <include src="./partials/modal-terms.html"></include>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script
@@ -54,14 +69,6 @@
       src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
     ></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <script src="./main.js"></script>
@@ -69,54 +76,8 @@
 
     <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
-    <!-- <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var splide = new Splide('.splide', {
-          rewind: false,
-          rewindByDrag: false,
-        });
-        splide.mount();
-      });
-    </script> -->
-    <!-- <script>
-      new Splide('.splide', {
-        perPage: 3,
-        // gap: '1rem',
-        // rewind: false,
-        // rewindByDrag: false,
-        // focus  : 'center',
-        drag: false,
-        perMove: 3,
-        // padding: { left: 30 },
-        breakpoints: {
-          1280: { perPage: 2, perMove: 2 },
-          768: { perPage: 1, perMove: 1 },
-        },
-        // height: auto,
-        // fixedHeight: '600px',
-        // width: '80%',
-        classes: {
-          pagination: 'splide__pagination my-pagination',
-          page: 'splide__pagination__page my-page',
-        },
-      }).mount();
-
-      new Splide('.splide1', {
-        perPage: 3,
-        drag: false,
-        perMove: 3,
-        // padding: { left: 30 },
-        breakpoints: {
-          1200: { perPage: 2, perMove: 2 },
-          768: { perPage: 1, perMove: 1 },
-        },
-        classes: {
-          pagination: 'splide__pagination my-pagination',
-          page: 'splide__pagination__page my-page',
-        },
-      }).mount();
-    </script> -->
-
+    <script src="./js/modalPrivacy.js"></script>
+    <script src="./js/modalTerms.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var main = new Splide('#main-carousel', {
@@ -155,7 +116,7 @@
         thumbnails.mount();
       });
     </script>
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function () {
         var main = new Splide('#main-carousel-p', {
           type: 'fade',
@@ -193,36 +154,12 @@
         main.mount();
         thumbnails.mount();
       });
-    </script>
-
-    <!-- <script>
-      const btnMenu = document.querySelector('.menu-button');
-      const menu = document.querySelector('.menu-container');
-      const toggleMenu = function () {
-        menu.classList.toggle('icon-cross');
-      };
-
-      btnMenu.addEventListener('click', function (e) {
-        e.stopPropagation();
-        toggleMenu();
-      });
-
-      document.addEventListener('click', function (e) {
-        const target = e.target;
-        const its_menu = target == menu || menu.contains(target);
-        const its_btnMenu = target == btnMenu;
-        const menu_is_active = menu.classList.contains('icon-cross');
-
-        if (!its_menu && !its_btnMenu && menu_is_active) {
-          toggleMenu();
-        }
-      });
     </script> -->
-    <script>
+    <!-- <script>
       new Splide('#image-carousel', {
         cover: true,
         heightRatio: 0.5,
       }).mount();
-    </script>
+    </script> -->
   </body>
 </html>

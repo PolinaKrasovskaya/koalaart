@@ -1,14 +1,18 @@
 .examples {
-padding-top: 50px;
-padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: $grey-bg;
   width: 100%;
   align-items: center;
   justify-content: center;
+
+  @include for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .examples-heading {
-
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
@@ -18,7 +22,7 @@ padding-bottom: 50px;
   line-height: 1.14;
   letter-spacing: 0.04em;
   color: $dark-bg;
-  text-shadow: 1px 1px 2px $main-text-cl;
+  text-shadow: 1px 1px 3px $main-text-cl;
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
