@@ -2,12 +2,14 @@
     const refs = {
       openModalBtn: document.querySelector('[data-modal-open]'),
       closeModalBtn: document.querySelector('[data-modal-close]'),
+      closeModalOkBtn: document.querySelector('[data-modal-ok-close]'),
       modal: document.querySelector('[data-modal]'),
       backdrop: document.querySelector('.js-modal-backdrop'),
     };
   
     refs.openModalBtn.addEventListener('click', onOpenModal);
     refs.closeModalBtn.addEventListener('click', onCloseModal);
+    refs.closeModalOkBtn.addEventListener('click', onCloseModal);
     refs.backdrop.addEventListener('click', onBackdropClick);
   
     function onOpenModal() {
